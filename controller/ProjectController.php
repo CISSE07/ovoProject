@@ -23,21 +23,19 @@ class ProjectController extends AbstractController{
    }
 
    // 2eme facon de faire une methode avec notions d'entitées
-   public function addProjectValidation(){
+    public function addProjectValidation(){
        // recupere les données du formulaire dans la BDD avec la methode checkdata
        $data= $this->checkData();
        $mail= $_SESSION['user']['mail'];
        $infos= $this->UserManager->getInfosUser($mail);// if
        var_dump($data);
-       $project = new Project(); // instancier un objet articles
+       $project = new Project(); // instancier un objet project
        $project->setId(($data['id']));
        $project->setNom(($data['nom']));
        $project->setSuivi(($data['suivis']));
        $project->setIdUser($infos['id']);
 
        $this->ProjectManager->addProject($project);
-
-
    }
 }
 

@@ -73,16 +73,16 @@ try{
                         case "addProject":
                             $project->addProject();
                             break;
-                        case "addProjectValidation":
+                        case "addProject":
                             $project->addProjectValidation();
                             break;
 
                         
                     }
                 }
-            // case "updateUser":
-            //     $user->updateUser();
-            
+            case "updateUser":
+                $user->UpdateUser();
+                break;
         }
 
     }

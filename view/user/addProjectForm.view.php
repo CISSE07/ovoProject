@@ -5,7 +5,7 @@ ob_start();
 
     <section id="addProject">
         <h2>Ajouter un Projet</h2>
-        <form action="<?= URL ?>account/addProjectValidation" method="POST" enctype="multipart/form-data">
+        <form action="<?= URL ?>account/addProject" method="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend>Ajouter un article</legend>
                 <br>

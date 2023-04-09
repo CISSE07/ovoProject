@@ -10,20 +10,20 @@
     <!-- section profil -->
     <section id="profil">
         <h2>Mon Profil</h2>
-        <form action="#" method="get">
+        <form action="<?= URL ?>updateUser" method="post">
             <fieldset>
                 <legend>Modifier mon profil</legend>
                 <br>
                 <label for="fname">Prénom</label>
-                <input type="text" id="fname" name="firstname" placeholder="Votre prénom" required>
+                <input type="text" id="fname" name="firstname" placeholder=" <?php if(isset($data['prenom'])){echo $data['prenom'];} ?>" >
 
                 <br>
                 <label for="lname">Nom</label>
-                <input type="text" id="lname" name="lastname" placeholder="Votre nom" required>
+                <input type="text" id="lname" name="lastname" placeholder="<?php if(isset($data['nom'])){echo $data['nom'];} ?>">
             
                 <br>
                 <label for="mail">Mail</label>
-                <input type="email" name="email" id="mail" placeholder="Votre mail" required>
+                <input type="email" name="email" id="mail" placeholder="<?php if(isset($data['mail'])){echo $data['mail'];} ?>">
             
                 <button type="submit">Modifier</button>
             </fieldset>

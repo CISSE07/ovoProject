@@ -43,14 +43,13 @@ class UserManager extends Manager{
         // si le resultat est vrai alors on ajoute sinon sa nous retourne faux
         return (($res===1) ? true : false);
     }
-    // public function updateUser($data){
-    //     $sql='UPDATE user SET nom = ?, prenom = ?,mail = ? WHERE id = ?';
-    //     $res=$this->getDb()->prepare($sql);
-    //     $res->execute([$data['lastname'],$data['firstname'],$data['email']]);
-    //     // var_dump($data['email']);
-    //     $res=$res->rowCount();
-    //     // si le resultat est vrai alors on ajoute sinon sa nous retourne faux
-    //     return (($res===1) ? true : false);
-    // }
+    public function updateUser($data){
+        $sql='UPDATE user SET nom = ?, prenom = ?, mail = ? WHERE id = ?';
+        $res=$this->getDb()->prepare($sql);
+        $res->execute([$data['lastname'],$data['firstname'],$data['email'],$_SESSION['user']['id']]);
+        $res=$res->rowCount();
+        // si le resultat est vrai alors on ajoute sinon sa nous retourne faux
+        return (($res===1) ? true : false);
+    }
 
 }
