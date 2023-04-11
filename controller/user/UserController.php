@@ -8,8 +8,7 @@ class UserController extends AbstractController {
 
     private $base; //correspond à votre objet PDO
 
-    private $UserManager; //correspond à la classe userManager
-
+    private $UserManager; //correspond à la classe userManager 
     public function __construct(){
         $this->base = new DbConnect(); //instanciation d'un objet PDO
         $this->UserManager= new UserManager($this->base); //créer un objet statement
@@ -21,16 +20,21 @@ class UserController extends AbstractController {
         $data=$this->UserManager->getInfosUser($mail);
         require_once "view/user/profil.view.php";
     }
+    
 
     public function loginValidation(){
         $data = $this->checkData();
-        //var_dump($this->UserManager->getPasswordUser($data["mail"]));
+        // var_dump($this->UserManager->getPasswordUser($data["mail"]));
+        // die();
+        
         $connexion = $this->UserManager->verifyPassword($data["mail"], $data['mdp']);
         if ($connexion){
             if ($this->UserManager->accountValid($data['mail'])){
+                $user = $this->UserManager->getInfosUser($data['mail']);
                 DisplayController::messageAlert("Tu es connecté", DisplayController::VERTE);
                 $_SESSION['user']=[
-                    'mail' => $data['mail']
+                    'mail' => $data['mail'],
+                    'id'=>$user['id']
                 ];
                 header("Location: ".URL."account/profil");
                 die();
@@ -62,23 +66,18 @@ class UserController extends AbstractController {
             unset($_SESSION['user']);
             header("Location: ".URL. "accueil");
             die();
-            // if ($this->UserManager->accountValid($data['mail'])){
-            //     DisplayController::messageAlert("Tu es connecté", DisplayController::VERTE);
-            //     $_SESSION['user']=[
-            //         'mail' => $data['mail']
-            //     ];
-            //     header("Location: ".URL."account/profil");
-            //     die();
-            // }else{
-            //     DisplayController::messageAlert("Ton compte n'est pas activé", DisplayController::ORANGE);
-            //     header("Location: ".URL."login");
-            //     die();
-            // }
+            
         }else{
             DisplayController::messageAlert("Erreur au moment de l'inscription", DisplayController::ROUGE);
             header("Location: " . URL . "accueil");
             die();
         }
+    }
+    
+
+    public function UpdateUser(){
+        // verifier la connexion d'user
+ 
     }
    
 }

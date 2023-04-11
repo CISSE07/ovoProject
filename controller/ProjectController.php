@@ -19,7 +19,10 @@ class ProjectController extends AbstractController{
     }
 
     public function addProject(){
-       require_once "view/user/addProjectForm.view.php";
+        //Recherche toutes les infos de la personne connectée
+        $mail=$_SESSION['user']['mail'];
+        $data=$this->UserManager->getInfosUser($mail);
+        require_once "view/user/addProjectForm.view.php";
    }
 
    // 2eme facon de faire une methode avec notions d'entitées

@@ -2,6 +2,10 @@
 ob_start();
 ?>
     <link rel="stylesheet" href="../style.css">
+    <!-- section banniere bienvenue id: baniereBvn-->
+    <section id="baniereBvn">
+        <h1>Bienvenue <?=$data['prenom']?></h1>
+    </section>
 
     <section id="addProject">
         <h2>Ajouter un Projet</h2>

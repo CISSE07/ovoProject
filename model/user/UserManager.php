@@ -1,6 +1,6 @@
 <?php 
 
-class UserManager extends Manager{ 
+class UserManager extends Manager{
 
     public function getPasswordUser($mail){
         //Recherche du mdp de la BDD en fonction du mail
@@ -43,14 +43,14 @@ class UserManager extends Manager{
         // si le resultat est vrai alors on ajoute sinon sa nous retourne faux
         return (($res===1) ? true : false);
     }
-    // public function updateUser($data){
-    //     $sql='UPDATE user SET nom = ?, prenom = ?,mail = ? WHERE id = ?';
-    //     $res=$this->getDb()->prepare($sql);
-    //     $res->execute([$data['lastname'],$data['firstname'],$data['email']]);
-    //     // var_dump($data['email']);
-    //     $res=$res->rowCount();
-    //     // si le resultat est vrai alors on ajoute sinon sa nous retourne faux
-    //     return (($res===1) ? true : false);
-    // }
+    
+    public function updateUser($data){
+        $sql='UPDATE user SET nom = ?, prenom = ?, mail = ? WHERE id = ?';
+        $res=$this->getDb()->prepare($sql);
+        $res->execute([$data['lastname'],$data['firstname'],$data['email'],$_SESSION['user']['id']]);
+        $res=$res->rowCount();
+        // si le resultat est vrai alors on ajoute sinon sa nous retourne faux
+        return (($res===1) ? true : false);
+    }
 
 }
