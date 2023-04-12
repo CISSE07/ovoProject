@@ -59,13 +59,25 @@ class UserController extends AbstractController {
 
     public function registerValidation(){
         $data= $this->checkData();
-        // var_dump($data);
+        var_dump($data);
         $validation=$this->UserManager->addUser($data);
         if($validation){
-            DisplayController::messageAlert("Veuillez vous connectez pour acceder a votre profil", DisplayController::ROUGE);
-            unset($_SESSION['user']);
-            header("Location: ".URL. "accueil");
-            die();
+            // DisplayController::messageAlert("Veuillez vous connectez pour acceder a votre profil", DisplayController::ROUGE);
+            // unset($_SESSION['user']);
+            // header("Location: ".URL. "accueil");
+            // die();
+            if ($this->UserManager->accountValid($data['mail'])){
+                DisplayController::messageAlert("Tu es connecté", DisplayController::VERTE);
+                $_SESSION['user']=[
+                    'mail' => $data['mail']
+                ];
+                header("Location: ".URL."account/profil");
+                die();
+            }else{
+                DisplayController::messageAlert("Ton compte n'est pas activé", DisplayController::ORANGE);
+                header("Location: ".URL."login");
+                die();
+            }
             
         }else{
             DisplayController::messageAlert("Erreur au moment de l'inscription", DisplayController::ROUGE);

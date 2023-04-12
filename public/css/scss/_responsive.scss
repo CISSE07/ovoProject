@@ -1,0 +1,179 @@
+
+
+@media screen and (max-width:600px) {
+    /* animation et construction du menu hamberger */
+    .con{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #check{
+        position: absolute;
+        opacity: 0;
+    }
+    
+    label{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        position: relative;
+        display: block;
+    }
+    
+    label span{
+        position: absolute;
+        display: block;
+        height: 3px;
+        width: 100%;
+        border-radius: 100px;
+        background-color: #0D2053;
+        transition: 0.5s ease-in-out;
+    }
+    
+    label span:nth-child(1){
+        top: 0;
+    }
+    
+    label span:nth-child(2){
+        top: 8px;
+    }
+    
+    label span:nth-child(3){
+        top: 16px;
+    }
+    
+    label span:nth-child(4){
+        transform: rotate(-45deg);
+        top: 8px;
+        opacity: 0;
+    }
+    
+    #check:checked + label span:nth-child(3){
+        opacity: 0; 
+    }
+    
+    #check:checked + label span:nth-child(2){
+        opacity: 0; 
+    }
+    
+    #check:checked + label span:nth-child(1){
+        animation: a 1.2s ease forwards;
+    }
+    
+    /* animation menu hamburger*/
+    @keyframes a {
+        50%{
+            transform: translatey(13px);
+        }
+        100%{
+            transform: rotate(45deg);
+            top:8px;
+        }
+    }
+    
+    #check:checked + label span:nth-child(4){
+        animation: b 1.5s cubic-bezier(0.9, 0, 0.85, -0.1) forwards;
+    }
+    
+    @keyframes b {
+        100%{
+            opacity: 100;
+        }
+    } 
+
+    /* header responsive */
+    header{
+        background-color: #f5f5f5;
+        padding: 15px 0;
+        flex-direction: column;
+    }
+    h1,h2{
+        font-size: 30px;
+    }
+    .con{
+        padding-bottom: 12px;
+    }
+
+    /* correspond a la liste de navigation */
+    #nav{
+        padding-bottom: 12px;
+        display: none;
+    }
+
+    #btnHead{
+        display: none;
+    }
+
+    /* footer responsive */
+    footer{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* fieldset des formulaire */
+    fieldset input{
+        width: 70%;
+    }
+    #contact_form textarea{
+        width: 70%;
+    }
+}
+/* responsive form */
+@media screen and (max-width:700px) {
+    fieldset{
+        width: 90%;
+    }
+}
+/* responsive page acceuill */
+@media screen and (max-width:900px) {
+    #section1{
+        flex-direction: column;
+    }
+    #section2{
+        flex-direction: column-reverse;
+    }
+    #section1 img, #section2 img{
+        width: -webkit-fill-available;
+        height: auto;
+        margin-top: 20px;
+    }
+    
+    h2{
+        width: -webkit-fill-available;
+    }
+    .boxRight, .boxText {
+        width: -webkit-fill-available;
+        display: grid;
+        /* text-align: center; */
+    }
+    .boxRight p{
+        width: -webkit-fill-available;
+        margin-bottom: 15px;
+    }
+    .boxText{
+        width: 100%;
+
+    }
+    
+}
+/* responsive expertise */
+@media screen and (max-width:1024px) {
+    .boxText h2 + p{
+        width: -webkit-fill-available;
+    }
+    /* section fonctionneement d'ovo */
+    #sect_fonct{
+        flex-direction: column;
+    }
+    #sect_fonct img{
+        width: -webkit-fill-available;
+
+    }
+    .expertCard{
+        margin-bottom: 20px;
+    }
+}
+
+

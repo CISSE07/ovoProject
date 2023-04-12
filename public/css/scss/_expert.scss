@@ -1,0 +1,80 @@
+
+/* 
+    le code css de la page expertise
+*/
+
+section:first-of-type{
+    margin: 20px 0px;
+}
+#expertise h2{
+    text-align: center;
+}
+/* sect_expertCards est la box ou il ya tous les expertcards */
+#sect_expertCards{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 25px;
+}
+.expertCard{
+    width: 220px;
+    border: 1px solid #0d205333;
+    border-radius: 5px;
+    padding: 15px 10px;
+}
+.expertCard:hover{
+    box-shadow: -15px 50px 90px rgba(88, 103, 128, 0.253);
+    cursor: pointer;
+    border: transparent;
+    transition: all 0.2s ease-in-out;
+}
+.expertCard_img{
+    text-align: center;
+    height: 120px;
+}
+.expertCard_img img{
+    width: 85px;
+}
+.expertCard_txt h3{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* section fonctionneement d'ovo */
+#sect_fonct{
+    margin-top: 40px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* div boxText */
+
+.boxText h2 + p{
+    width: 470px;
+    margin-bottom: 15px;
+    /* background-color: red; */
+}
+#etape p{
+    font-size: 25px;
+    padding-bottom: 10px;
+    color: #0d20538a;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+#etape p:hover{
+    cursor: pointer;
+    color: #0d2053;
+    border-bottom: 1px solid #0d2053;
+}
+#etape p span{
+    font-size: 55px;
+    color: #0d20538a;
+}
+#etape p:hover span{
+    color: #0d2053;
+}
+
+#sect_fonct img{
+    width: 465px;
+}

@@ -1,7 +1,6 @@
 <?php
     ob_start();
 ?>
-    <link rel="stylesheet" href="../style.css">
     <!-- section banniere bienvenue id: baniereBvn-->
     <section id="baniereBvn">
         <h1>Bienvenue <?=$data['prenom']?></h1>
@@ -52,10 +51,10 @@
               </tr>
           </table>
     </section>
-    <section id="newProject">
+    <section id="sect_portfolio">
         <a href="<?= URL ?>account/addProject">Ajouter un projet</a>
     </section>    
 <?php
 $content=ob_get_clean();
-require_once "view/template.php";
+require_once "view/template.user.php";
 ?>

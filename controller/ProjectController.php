@@ -39,8 +39,6 @@ class ProjectController extends AbstractController{
        $project->setIdUser($infos['id']);
 
        $this->ProjectManager->addProject($project);
-
-
    }
 }
 

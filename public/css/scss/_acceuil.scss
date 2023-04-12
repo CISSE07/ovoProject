@@ -1,0 +1,33 @@
+/* mise en page du hr -> barre de separation */
+hr{
+    margin: 30px;
+    border-color: #f5f5f563;
+}
+
+
+/* 
+    le code css de la page acceuil
+*/
+#section1,#section2{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+#section1 img{
+    width: 500px;
+    height: 450px;
+    object-fit: cover;
+}
+#section2 img{
+    height: 570px;
+    width: 404px;
+    object-fit: cover;
+}
+.boxRight,.boxText{
+    width: 50%;
+    display: grid;
+}
+.boxRight p{
+    width: 410px;
+    padding-top: 10px;
+}

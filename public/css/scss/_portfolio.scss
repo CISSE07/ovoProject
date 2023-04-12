@@ -1,0 +1,53 @@
+/* 
+    le code css de la page portfolio
+*/
+
+#sect_portfolio,#reference{
+    text-align: -webkit-center;
+}
+/* section portfolio */
+#sect_portfolio h{
+    margin-bottom: 20px;
+}
+.projects{
+    background-color: #f5f5f59c;
+    padding: 60px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.project{
+    width: 300px;
+    border: 10px solid #0d2053;
+    margin: 0px 15px 15px 0px;
+}
+.project_img img{
+    height: 270px;
+    object-fit: cover;
+}
+
+.project_content{
+    padding: 15px;
+}
+.project_content h3{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* section portfolio */
+#nosRef{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f5f5f59c;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+#nosRef img{
+    width: 170px;
+}
+.logoRef{
+    display: flex;
+    align-items: center;
+    
+}

@@ -1,0 +1,36 @@
+/* boutons */
+button{
+    padding: 10px 15px;
+    border: transparent;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+button:hover{
+    background-color: #0D2053;
+    color: #F5F5F5;
+    transition: 0.1s ease-in;
+    cursor: pointer;
+}
+button:hover a{
+    color: #F5F5F5;
+}
+
+/* boutons header */
+header button{
+    background-color: #0D2053;
+}
+header button a{
+    color: #F5F5F5;
+    transition: 0.1s ease-in;
+}
+header button:hover{
+    background-color: #e0dede;
+    cursor: pointer;
+}
+header button:hover a{
+    color: #0D2053;
+}
+/* class btnContact */
+.btnContact{
+    font-size: 11px;
+}

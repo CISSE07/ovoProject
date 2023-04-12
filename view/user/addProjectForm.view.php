@@ -1,13 +1,12 @@
 <?php
 ob_start();
 ?>
-    <link rel="stylesheet" href="../style.css">
     <!-- section banniere bienvenue id: baniereBvn-->
     <section id="baniereBvn">
         <h1>Bienvenue <?=$data['prenom']?></h1>
     </section>
 
-    <section id="addProject">
+    <section id="profil">
         <h2>Ajouter un Projet</h2>
         <form action="<?= URL ?>account/addProjectValidation" method="POST" enctype="multipart/form-data">
             <fieldset>
@@ -25,4 +24,4 @@ ob_start();
     </section>
 <?php
 $content=ob_get_clean();
-require_once "view/template.php";
+require_once "view/template.user.php";

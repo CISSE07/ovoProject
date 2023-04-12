@@ -1,0 +1,84 @@
+/* parametrage génerale des ul */
+ul{
+    list-style-type: none;
+}
+/* parametrage génerale des liens */
+a{
+    text-decoration: none;
+    color: #0D2053;
+}
+/*parametrage génerale des titres  */
+h1,h2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 55px;
+    text-transform: uppercase;
+}
+h5{
+    font-size: 15px;
+    width: 300px;
+    position: relative;
+    background: linear-gradient(90deg, rgba(168,37,184,1) 0%, rgba(247,134,46,1) 21%, rgba(247,134,46,1) 39%, rgba(253,94,9,1) 52%, rgba(254,255,0,1) 82%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+
+/* header */
+header{
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 25px;
+    border-bottom: 1px solid #F5F5F5;
+}
+header ul{
+    display: flex;
+}
+header li{
+    margin-right: 10px;
+}
+header img{
+    width: 100px;
+}
+.con{
+    display: none;
+}
+
+/* menu en flex sur desktop */
+#nav{
+    display: flex;
+}
+#btnHead{
+    width: 240px;
+    display: flex;
+    padding-top: 12px;
+    justify-content: space-around;
+}
+
+/* footer desktop*/
+footer {
+    background-color: #f5f5f5;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    width: -webkit-fill-available;
+}
+
+footer ul{
+    display: flex;
+    padding-bottom: 10px;
+}
+footer li{
+    margin-left: 10px;
+}
+.copyr{
+    padding-bottom: 10px;
+}
+/* fixer les footer de certains page en bas de page */
+#fixed{
+    position: absolute;
+    bottom: 0;
+}
