@@ -62,11 +62,15 @@ try{
                 if(!SecurityController::isLog()){
                     DisplayController::messageAlert("Il faut se connecter !", DisplayController::ROUGE);
                     header("Location: " . URL . "accueil");
+                    die(); // laisser ou enlever à demander au prof
                 } else{
                     switch ($url[1]){
                         case "profil":
                             $user->myProfil();
                             break;
+                        case "updateValidation":
+                            $user->UpdateUser();
+                            break;// a faire.
                         case "logout":
                             $user->logout();
                             break;

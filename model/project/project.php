@@ -13,6 +13,8 @@ class Project{
 
     private $id_user;
 
+    private $description;
+
     /**
      * @return mixed
      */
@@ -43,7 +45,7 @@ class Project{
      */
     public function setNom($nom): void
     {
-        $this->id = $nom;
+        $this->nom = $nom;
     }
 
 
@@ -78,6 +80,22 @@ class Project{
     public function setIdUser($id_user): void
     {
         $this->id_user = $id_user;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $id_user
+     */
+    public function setDescription($description): void
+    {
+        $this->description = $description;
     }
 
 }

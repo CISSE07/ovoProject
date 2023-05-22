@@ -26,10 +26,14 @@ class UserManager extends Manager{
     }
     // fonctionnalité de récuperation du mail du user 
     public function getInfosUser($mail){
+        // var_dump($mail);
         $sql="SELECT * FROM user WHERE mail=?";
         $res=$this->getDb()->prepare($sql);
         $res->execute([$mail]);
         $data=$res->fetch();
+        var_dump($data);
+        echo('<br>');
+        var_dump($_SESSION);
         return $data;
     }
 
@@ -37,7 +41,7 @@ class UserManager extends Manager{
         $mdp = password_hash($data['pass'], PASSWORD_DEFAULT);
         $sql="INSERT INTO user (nom,prenom,mail,pass,is_valid) VALUES (?,?,?,?,?)";
         $res=$this->getDb()->prepare($sql);
-        $res->execute([$data['lastname'],$data['firstname'],$data['email'],$mdp,1]);
+        $res->execute([$data['lastname'],$data['firstname'],$data['mail'],$mdp,1]);
         // var_dump($data['email']);
         $res=$res->rowCount();
         // si le resultat est vrai alors on ajoute sinon sa nous retourne faux
@@ -47,10 +51,15 @@ class UserManager extends Manager{
     public function updateUser($data){
         $sql='UPDATE user SET nom = ?, prenom = ?, mail = ? WHERE id = ?';
         $res=$this->getDb()->prepare($sql);
-        $res->execute([$data['lastname'],$data['firstname'],$data['email'],$_SESSION['user']['id']]);
+        // var_dump($data);
+        $res->execute([$data['nom'],$data['prenom'],$data['mail'],$_SESSION['user']['id']]);
+        // var_dump($_SESSION['user']);
         $res=$res->rowCount();
         // si le resultat est vrai alors on ajoute sinon sa nous retourne faux
         return (($res===1) ? true : false);
     }
+
+    // ajouter la fonction showProject qui va montrer le projet de l'utilisateur faudra faire une 
+    // jointure pour que ca sort tous les projets correspondant à l'id de l'utilisateur.
 
 }

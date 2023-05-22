@@ -1,13 +1,18 @@
 /* 
     code css de la page inscription et connexion
 */
-
+#formInscrip, #formConnect{
+    min-height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+// 
 #formInscrip h2, #formConnect h2{
     text-align: center;
 }
 
 form{
-    /*  */
     text-align: center;
     display: flex;
     justify-content: center;
@@ -21,7 +26,8 @@ fieldset{
 }
 fieldset input{
     width: 360px;
-    margin-top: 15px;
+    height: 35px;
+    margin-top: 10px;
     padding: 10px;
     border: transparent;
     border-radius: 5px;

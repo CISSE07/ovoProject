@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="shortcut icon" href="public/image/ovo_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="public\css\index.css" />
+
 </head>
 <body>
     <header>
@@ -37,7 +38,7 @@
         </figure>
         <?php
             if (isset($_SESSION['user'])) :
-          ?>
+        ?>
             <div id="btnHead">
                 <button><a href="<?= URL.'account/profil' ?>">Mon Compte</a></button>
                 <button><a href="<?= URL.'account/logout' ?>">Déconnexion</a></button>

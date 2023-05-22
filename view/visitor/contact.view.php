@@ -20,7 +20,6 @@
                     <input type="text" name="project" id="project" placeholder="Votre site web">
                     <input type="tel" name="telephone" id="tel" placeholder="Votre numero de téléphone" required>
                     <textarea name="textarea-219" cols="40" rows="10" placeholder="Message" required></textarea>
-                    <p><input type="checkbox" name="check" id="ckeck" >Enregistrer mon email et mon nom </p>
                     <button type="submit">Envoyer</button>
                 </fieldset>
             </form>

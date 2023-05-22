@@ -20,11 +20,28 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: Inter;
+    font-family: "Inter",sans-serif;
     color: #0D2053;
+}
+main{
+    min-height: 46rem;
 }
 
 /* reset image */
 section img{
     width: 300px;
+}
+// alert
+.alert{
+    padding-top: 15px;
+    text-align: -webkit-center;
+}
+.alert-danger{
+    color: #dc3545;
+}
+.alert-success{
+    color: #20c997a3;
+}
+.alert-warning{
+    color: #fd7e14;
 }

@@ -5,24 +5,28 @@
     <section id="baniereBvn">
         <h1>Bienvenue <?=$data['prenom']?></h1>
     </section>
-
+    <?php
+        // var_dump($_SESSION);
+        // var_dump($data);
+    ?>
     <!-- section profil -->
     <section id="profil">
         <h2>Mon Profil</h2>
-        <form action="#" method="get">
+        <form action="<?= URL ?>account/updateValidation" method="POST">
             <fieldset>
+
                 <legend>Modifier mon profil</legend>
                 <br>
-                <label for="fname">Prénom</label>
-                <input type="text" id="fname" name="firstname" placeholder="Votre prénom" required>
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder=<?=$data['prenom']?>>
 
                 <br>
-                <label for="lname">Nom</label>
-                <input type="text" id="lname" name="lastname" placeholder="Votre nom" required>
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder=<?=$data['nom']?>>
             
                 <br>
                 <label for="mail">Mail</label>
-                <input type="email" name="email" id="mail" placeholder="Votre mail" required>
+                <input type="email" name="mail" id="mail" placeholder=<?=$data['mail']?>>
             
                 <button type="submit">Modifier</button>
             </fieldset>
@@ -35,10 +39,10 @@
         <table>
             <tr>
               <th>Projets</th>
-              <th>Suivie</th>
+              <th>Description</th>
             </tr>
             <tr>
-              <td>f</td>
+              <td>  <?=$data['nom']?> </td>
               <td>f</td>
             </tr>
             <tr>
@@ -52,7 +56,9 @@
           </table>
     </section>
     <section id="sect_portfolio">
-        <a href="<?= URL ?>account/addProject">Ajouter un projet</a>
+        <button>
+            <a href="<?= URL ?>account/addProject">Ajouter un projet</a>
+        </button>
     </section>    
 <?php
 $content=ob_get_clean();

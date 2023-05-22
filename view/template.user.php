@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="shortcut icon" href="public/image/ovo_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../public/css/index.css" />
+
+
 </head>
 <body>
     <header>

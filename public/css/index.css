@@ -160,6 +160,10 @@ table td:hover {
   margin-top: 20px;
 }
 
+#contact_txt p {
+  text-align: center;
+}
+
 #contact_form {
   margin-top: 20px;
 }
@@ -360,21 +364,21 @@ footer li {
   padding-bottom: 10px;
 }
 
-/* fixer les footer de certains page en bas de page */
-#fixed {
-  position: absolute;
-  bottom: 0;
-}
-
 /* 
     code css de la page inscription et connexion
 */
+#formInscrip, #formConnect {
+  min-height: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #formInscrip h2, #formConnect h2 {
   text-align: center;
 }
 
 form {
-  /*  */
   text-align: center;
   display: flex;
   justify-content: center;
@@ -390,7 +394,8 @@ fieldset {
 
 fieldset input {
   width: 360px;
-  margin-top: 15px;
+  height: 35px;
+  margin-top: 10px;
   padding: 10px;
   border: transparent;
   border-radius: 5px;
@@ -619,11 +624,32 @@ fieldset input {
 * {
   padding: 0;
   margin: 0;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   color: #0D2053;
+}
+
+main {
+  min-height: 46rem;
 }
 
 /* reset image */
 section img {
   width: 300px;
+}
+
+.alert {
+  padding-top: 15px;
+  text-align: -webkit-center;
+}
+
+.alert-danger {
+  color: #dc3545;
+}
+
+.alert-success {
+  color: rgba(32, 201, 151, 0.6392156863);
+}
+
+.alert-warning {
+  color: #fd7e14;
 }/*# sourceMappingURL=index.css.map */
