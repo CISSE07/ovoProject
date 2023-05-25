@@ -31,7 +31,7 @@ class UserManager extends Manager{
         $res=$this->getDb()->prepare($sql);
         $res->execute([$mail]);
         $data=$res->fetch();
-        var_dump($data);
+        // var_dump($data);
         echo('<br>');
         var_dump($_SESSION);
         return $data;
@@ -41,7 +41,7 @@ class UserManager extends Manager{
         $mdp = password_hash($data['pass'], PASSWORD_DEFAULT);
         $sql="INSERT INTO user (nom,prenom,mail,pass,is_valid) VALUES (?,?,?,?,?)";
         $res=$this->getDb()->prepare($sql);
-        $res->execute([$data['lastname'],$data['firstname'],$data['mail'],$mdp,1]);
+        $res->execute([$data['nom'],$data['prenom'],$data['mail'],$mdp,1]);
         // var_dump($data['email']);
         $res=$res->rowCount();
         // si le resultat est vrai alors on ajoute sinon sa nous retourne faux

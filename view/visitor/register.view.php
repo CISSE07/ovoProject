@@ -9,10 +9,10 @@
             <fieldset>
                 <br>
                 <legend>S'inscrire chez ovo</legend>
-                <input type="text" id="nom" name="lastname" placeholder="Votre nom" required>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
                 <br>
 
-                <input type="text" id="prenom" name="firstname" placeholder="Votre prénom" required>
+                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
                 <br>
 
                 <input type="email" name="mail" id="mail" placeholder="Votre mail" required>

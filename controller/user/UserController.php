@@ -16,7 +16,7 @@ class UserController extends AbstractController {
 
     public function myProfil(){
         //Recherche toutes les infos de la personne connectée
-        $mail=$_SESSION['user']['id'];
+        $mail=$_SESSION['user']['mail'];
         // var_dump($mail);
         $data=$this->UserManager->getInfosUser($mail);
         require_once "view/user/profil.view.php";
@@ -31,7 +31,7 @@ class UserController extends AbstractController {
                 $user = $this->UserManager->getInfosUser($data['mail']);
                 DisplayController::messageAlert("Tu es connecté", DisplayController::VERTE);
                 $_SESSION['user']=[
-                    'mail' => $data['mail'],
+                    'mail' => $user['mail'],
                     'id'=>$user['id']
                 ];
                 header("Location: ".URL."account/profil");
@@ -87,12 +87,9 @@ class UserController extends AbstractController {
         $data= $this->checkData();
         $validationUpdate = $this->UserManager->updateUser($data);
         
-        $userInfo = $this->UserManager->getInfosUser($data['mail']);
         if($validationUpdate) {
             DisplayController::messageAlert("Tes information ont été mise à jour", DisplayController::VERTE);
-        }
-
-        
+        }        
     }
    
 }
