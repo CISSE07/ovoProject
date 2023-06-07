@@ -9,13 +9,6 @@ class ProjectManager extends Manager{
         // si le resultat est vrai alors on ajoute sinon sa nous retourne faux
         return (($res===1) ? true : false);
     }
-    // public function showProject(Project $project){
-    //     $sql= " SELECT nom_project,description from project INNER JOIN user ON project.id_user = user.id";
-    //     $res=$this->getDb()->prepare($sql);
-    //     $res->execute();
-
-    //     $projects = $res->fetchAll(PDO::FETCH_ASSOC);
-
-    //     return $projects;
-    // }
+    
+   
 }

@@ -24,6 +24,7 @@ public function addProject(){
     //Recherche toutes les infos de la personne connectée
     $mail=$_SESSION['user']['mail'];
     $data=$this->UserManager->getInfosUser($mail);
+    $projects = $this->UserManager->getProjectUser($mail);
     require_once "view/user/addProjectForm.view.php";
 }
 
@@ -39,6 +40,7 @@ public function addProjectValidation(){
     $project->setNom(($data['nom_project']));
     $project->setDescription(($data['description']));
     $project->setIdUser($info['id']);
+
         
     $validation = $this->ProjectManager->AddProject($project);
     if ($validation) {
@@ -47,6 +49,7 @@ public function addProjectValidation(){
         die();
     }
 }
+
 }
 
 ?>

@@ -4,11 +4,14 @@ require_once "model/manager.php";
 require_once "model/user/UserManager.php";
 require_once "model/DbConnect.class.php";
 
+
 class UserController extends AbstractController {
 
     private $base; //correspond à votre objet PDO
 
     private $UserManager; //correspond à la classe userManager 
+
+    private $projectManager; // la classe projectManager qui gère toutes les donnée corrrespondant aux projets
     public function __construct(){
         $this->base = new DbConnect("root",""); //instanciation d'un objet PDO
         $this->UserManager= new UserManager($this->base); //créer un objet statement
@@ -17,11 +20,9 @@ class UserController extends AbstractController {
     public function myProfil(){
         //Recherche toutes les infos de la personne connectée
         $mail=$_SESSION['user']['mail'];
-        // $id = $_SESSION['user']['id'];
-        // var_dump($mail);
-        // var_dump($id);
-        // $data=$this->UserManager->getInfosUser($id);
         $data=$this->UserManager->getInfosUser($mail);
+        $projects =$this->UserManager->getProjectUser($mail);
+        // var_dump($projects);
         require_once "view/user/profil.view.php";
     }
     

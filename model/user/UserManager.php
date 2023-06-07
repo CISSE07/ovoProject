@@ -24,7 +24,7 @@ class UserManager extends Manager{
         $valid=$res->fetch();
         return (($valid['is_valid']===0) ? false : true);
     }
-    // fonctionnalité de récuperation du mail du user 
+    // fonctionnalité de récuperationles infos d'apres le mail du user 
     public function getInfosUser($mail){
         // var_dump($mail);
         $sql="SELECT * FROM user WHERE mail=?";
@@ -76,6 +76,14 @@ class UserManager extends Manager{
         $rowCount = $res->rowCount();
         // Si le résultat est vrai (1 ligne supprimée), retourne vrai, sinon retourne faux
         return ($rowCount === 1) ? true : false;
+    }
+
+    public function getProjectUser($mail){
+        $sql = 'SELECT nom_project, description FROM user INNER JOIN project ON user.id=project.id_user where mail=?';
+        $res = $this->getDb()->prepare($sql);
+        $res->execute([$mail]);
+        $projects=$res->fetchAll();
+        return $projects;
     }
 
 }

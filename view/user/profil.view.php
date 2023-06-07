@@ -18,7 +18,7 @@
                 <legend>Infos profil</legend>
                 <br>
                 <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom" placeholder=<?=$data['prenom']?> >
+                <input type="text" id="prenom" name="prenom" placeholder=<?=$data['prenom']?><?=$data['id']?> >
 
                 <br>
                 <label for="nom">Nom</label>
@@ -41,18 +41,16 @@
               <th>Projets</th>
               <th>Description</th>
             </tr>
-            <tr>
-              <td>  <?=$data['id']?> </td>
-              <td>f</td>
-            </tr>
-            <tr>
-              <td>s</td>
-              <td>s</td>
-            </tr>
-            <tr>
-                <td>t</td>
-                <td>t</td>
-              </tr>
+            <?php foreach ($projects as $project): ?>
+                <tr>
+                    <td> 
+                        <?php echo $project['nom_project']; ?>
+                    </td>
+                    <td> 
+                        <?php echo $project['description']; ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
           </table>
     </section>
     <section id="sect_addProject">
