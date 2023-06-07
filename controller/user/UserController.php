@@ -10,14 +10,17 @@ class UserController extends AbstractController {
 
     private $UserManager; //correspond à la classe userManager 
     public function __construct(){
-        $this->base = new DbConnect(); //instanciation d'un objet PDO
+        $this->base = new DbConnect("root",""); //instanciation d'un objet PDO
         $this->UserManager= new UserManager($this->base); //créer un objet statement
     }
 
     public function myProfil(){
         //Recherche toutes les infos de la personne connectée
         $mail=$_SESSION['user']['mail'];
+        // $id = $_SESSION['user']['id'];
         // var_dump($mail);
+        // var_dump($id);
+        // $data=$this->UserManager->getInfosUser($id);
         $data=$this->UserManager->getInfosUser($mail);
         require_once "view/user/profil.view.php";
     }
@@ -63,9 +66,9 @@ class UserController extends AbstractController {
             if ($this->UserManager->accountValid($data['mail'])){
                 DisplayController::messageAlert("Tu es connecté", DisplayController::VERTE);
                 $_SESSION['user']=[
-                    'mail' => $data['mail']
+                    'mail' => $data['mail'],
                 ];
-                // var_dump($data['mail']);
+                var_dump($_SESSION);
                 header("Location: ".URL."account/profil");
                 die();
             }else{
@@ -89,7 +92,33 @@ class UserController extends AbstractController {
         
         if($validationUpdate) {
             DisplayController::messageAlert("Tes information ont été mise à jour", DisplayController::VERTE);
-        }        
+            header("Location: ".URL."account/profil");
+                die();
+        } else {
+            // Échec de la suppression
+            DisplayController::messageAlert("Échec de la mise à jour.", DisplayController::ROUGE);
+            header("Location: ".URL. "account/profil");
+        }    
     }
    
+    // supprimer infos de l'utilisateur
+    public function deleteUser(){
+      $user = $this->UserManager->getInfosUser($_SESSION['user']['mail']);
+      if ($user) {
+          $email = $user['mail'];
+          $deletionSuccess = $this->UserManager->deleteUser($email);
+          if ($deletionSuccess) {
+              // Suppression réussie, effectuez ici d'autres actions si nécessaire
+              unset($_SESSION['user']);
+              DisplayController::messageAlert("Votre compte a été supprimé avec succès.", DisplayController::VERTE);
+              header("Location: ".URL. "accueil");
+              die();
+              // après la suppression de l'utilisateur
+          } else {
+              // Échec de la suppression
+              DisplayController::messageAlert("Échec de la suppression du compte.", DisplayController::ROUGE);
+              header("Location: ".URL. "account/profil");
+          }
+      } 
+     }
 }

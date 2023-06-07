@@ -61,3 +61,11 @@ table td:hover {
     transition-property: all;
     transition-timing-function: line;
 }
+
+#sect_delete,#sect_addProject{
+    text-align: -webkit-center;
+}
+// supprimer bouton
+#sect_delete button:hover{
+    background-color: #df0505;
+}

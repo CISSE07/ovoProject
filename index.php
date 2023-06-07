@@ -80,8 +80,9 @@ try{
                         case "addProjectValidation":
                             $project->addProjectValidation();
                             break;
-
-                        
+                        case "delete":
+                            $user->deleteUser();
+                            break;
                     }
                 }
             // case "updateUser":

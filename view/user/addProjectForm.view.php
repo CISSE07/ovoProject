@@ -20,7 +20,7 @@ ob_start();
                     <label for="nom">
                         Nom du projet  
                     </label>
-                    <input type="text" name="nom" id="nom" placeholder="Nom du projet">
+                    <input type="text" name="nom_project" id="nom" placeholder="Nom du projet">
                     <br>
                     <!-- description du projet -->
                     <label for="description">

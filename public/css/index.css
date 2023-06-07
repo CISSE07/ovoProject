@@ -149,6 +149,14 @@ table td:hover {
   transition-timing-function: line;
 }
 
+#sect_delete, #sect_addProject {
+  text-align: -webkit-center;
+}
+
+#sect_delete button:hover {
+  background-color: #df0505;
+}
+
 /* 
     code css de la page conatact
 */

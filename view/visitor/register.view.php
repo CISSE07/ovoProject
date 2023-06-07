@@ -18,7 +18,7 @@
                 <input type="email" name="mail" id="mail" placeholder="Votre mail" required>
                 <br>
 
-                <input type="password" name="pass" id="pass" placeholder="Votre Mot" required>
+                <input type="password" name="pass" id="pass" placeholder="Votre Mot"  minlength="8" required>
                 <br>
                 
                 <button type="submit">S'inscrire</button>

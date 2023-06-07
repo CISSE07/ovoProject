@@ -15,7 +15,7 @@ private $ProjectManager;
 
 public function __construct()
 {
-    $this->base = new DbConnect(); //instanciation d'un objet PDO
+    $this->base = new DbConnect("root", ""); //instanciation d'un objet PDO
     $this->UserManager= new UserManager($this->base); //créer un objet statement
     $this->ProjectManager = new ProjectManager($this->base); //instantier un objet ProjectManager
 }
@@ -36,7 +36,7 @@ public function addProjectValidation(){
 
     // var_dump($data);
     $project = new Project(); // instancier un objet projets
-    $project->setNom(($data['nom']));
+    $project->setNom(($data['nom_project']));
     $project->setDescription(($data['description']));
     $project->setIdUser($info['id']);
         

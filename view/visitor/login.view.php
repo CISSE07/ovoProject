@@ -11,7 +11,7 @@
                 <input type="email" name="mail" id="mail" placeholder="Entrer votre mail de connexion" required>
                 
                 <label for="mdp">Mot de passe</label>
-                <input type="password" name="mdp" id="mdp" placeholder="Entrer le mot de passe" required>
+                <input type="password" name="mdp" id="mdp" placeholder="Entrer le mot de passe" minlength="8" required>
                 <br>
                 
                 <button type="submit">Connexion</button>

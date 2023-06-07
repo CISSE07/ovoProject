@@ -15,18 +15,18 @@
         <form action="<?= URL ?>account/updateValidation" method="POST">
             <fieldset>
 
-                <legend>Modifier mon profil</legend>
+                <legend>Infos profil</legend>
                 <br>
                 <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom" placeholder=<?=$data['prenom']?>>
+                <input type="text" id="prenom" name="prenom" placeholder=<?=$data['prenom']?> >
 
                 <br>
                 <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" placeholder=<?=$data['nom']?>>
+                <input type="text" id="nom" name="nom" placeholder=<?=$data['nom']?> >
             
                 <br>
                 <label for="mail">Mail</label>
-                <input type="email" name="mail" id="mail" placeholder=<?=$data['mail']?>>
+                <input type="email" name="mail" id="mail" value=<?=$data['mail']?> readonly >
             
                 <button type="submit">Modifier</button>
             </fieldset>
@@ -42,7 +42,7 @@
               <th>Description</th>
             </tr>
             <tr>
-              <td>  <?=$data['nom']?> </td>
+              <td>  <?=$data['id']?> </td>
               <td>f</td>
             </tr>
             <tr>
@@ -55,11 +55,17 @@
               </tr>
           </table>
     </section>
-    <section id="sect_portfolio">
+    <section id="sect_addProject">
         <button>
             <a href="<?= URL ?>account/addProject">Ajouter un projet</a>
         </button>
-    </section>    
+    </section>
+    <hr>
+    <section id="sect_delete">
+        <button>
+            <a href="<?= URL ?>account/delete">Supprimer mon compte</a>
+        </button>
+    </section>     
 <?php
 $content=ob_get_clean();
 require_once "view/template.user.php";
