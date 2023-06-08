@@ -104,22 +104,19 @@ class UserController extends AbstractController {
    
     // supprimer infos de l'utilisateur
     public function deleteUser(){
-      $user = $this->UserManager->getInfosUser($_SESSION['user']['mail']);
-      if ($user) {
-          $email = $user['mail'];
-          $deletionSuccess = $this->UserManager->deleteUser($email);
-          if ($deletionSuccess) {
-              // Suppression réussie, effectuez ici d'autres actions si nécessaire
-              unset($_SESSION['user']);
-              DisplayController::messageAlert("Votre compte a été supprimé avec succès.", DisplayController::VERTE);
-              header("Location: ".URL. "accueil");
-              die();
-              // après la suppression de l'utilisateur
-          } else {
-              // Échec de la suppression
-              DisplayController::messageAlert("Échec de la suppression du compte.", DisplayController::ROUGE);
-              header("Location: ".URL. "account/profil");
-          }
-      } 
-     }
+        $user = $this->UserManager->getInfosUser($_SESSION['user']['mail']);
+        if ($user) {
+            // Suppression réussie, effectuez ici d'autres actions si nécessaire
+            $mail = $user['mail'];
+            $this->UserManager->deleteUser($mail);
+            unset($_SESSION['user']);
+            DisplayController::messageAlert("Votre compte a été supprimé avec succès.", DisplayController::VERTE);
+            header("Location: ".URL. "accueil");
+            die();
+      } else {
+            // Échec de la suppression
+            DisplayController::messageAlert("Échec de la suppression du compte.", DisplayController::ROUGE);
+            header("Location: ".URL. "account/profil");
+        }
+    }
 }

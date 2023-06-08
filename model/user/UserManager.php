@@ -70,9 +70,12 @@ class UserManager extends Manager{
 
     // supprimer mon compte 
     public function deleteUser($mail){
-        $sql = 'DELETE FROM user WHERE mail = ?';
+        $sql = 'BEGIN;
+                DELETE FROM project WHERE id_user = (SELECT id FROM user WHERE mail = ?);
+                DELETE FROM user WHERE mail = ?;
+                COMMIT;';
         $res = $this->getDb()->prepare($sql);
-        $res->execute([$mail]);
+        $res->execute([$mail, $mail]);
         $rowCount = $res->rowCount();
         // Si le résultat est vrai (1 ligne supprimée), retourne vrai, sinon retourne faux
         return ($rowCount === 1) ? true : false;

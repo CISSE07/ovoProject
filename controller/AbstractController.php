@@ -10,7 +10,7 @@ abstract class AbstractController{
             // var_dump($value);
             $valid=(isset($value) && !empty($value))? htmlspecialchars($value) : null;
             if ($valid==null){
-                throw new Exception("Données non validées");
+                throw new Exception("Données non validées le champs n'est pas rempli, veuillez remplir le champs");
             }
             $tab[$key]=$valid;
         }
