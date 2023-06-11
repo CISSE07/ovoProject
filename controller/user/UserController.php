@@ -22,7 +22,7 @@ class UserController extends AbstractController {
         $mail=$_SESSION['user']['mail'];
         $data=$this->UserManager->getInfosUser($mail);
         $projects =$this->UserManager->getProjectUser($mail);
-        // var_dump($projects);
+        $users = $this->UserManager->getUsers();
         require_once "view/user/profil.view.php";
     }
     
@@ -61,7 +61,6 @@ class UserController extends AbstractController {
 
     public function registerValidation(){
         $data= $this->checkData();
-        // var_dump($data);
         $validation=$this->UserManager->addUser($data);
         if($validation){
             if ($this->UserManager->accountValid($data['mail'])){
@@ -69,7 +68,6 @@ class UserController extends AbstractController {
                 $_SESSION['user']=[
                     'mail' => $data['mail'],
                 ];
-                var_dump($_SESSION);
                 header("Location: ".URL."account/profil");
                 die();
             }else{

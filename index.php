@@ -19,12 +19,14 @@ require_once "controller/visitor/VisitorController.php";
 require_once 'controller/user/UserController.php';
 require_once "controller/SecurityController.php";
 require_once "controller/ProjectController.php";
+require_once "controller/admin/AdminController.php";
 
 
 // $project= new ProjectController();
 $visitor= new VisitorController();
 $user= new UserController();
-$project= new ProjectController;
+$project= new ProjectController();
+$admin= new AdminController();
 
 
 
@@ -82,6 +84,9 @@ try{
                             break;
                         case "delete":
                             $user->deleteUser();
+                            break;
+                        case "dashboard":
+                            $admin->dashboardAccess();
                             break;
                     }
                 }

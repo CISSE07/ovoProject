@@ -89,4 +89,13 @@ class UserManager extends Manager{
         return $projects;
     }
 
+    // les clients et leurss infos a montrer sur le profil de l'admin
+    public function getUsers(){
+        $sql = 'SELECT nom ,prenom, mail from user where id_role = 2;';
+        $res = $this->getDb()->prepare($sql);
+        $res->execute();
+        $users=$res->fetchAll();
+        return $users;
+    }
+
 }
