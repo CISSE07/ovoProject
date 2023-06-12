@@ -11,7 +11,7 @@ class DbConnect extends PDO{
 
     public function __construct($username,$pass)
     {
-        $dsn="mysql:host=localhost;dbname=ovo;port=3306;charset=utf8";
+        $dsn="mysql:host=localhost;dbname=ovo;port=8889;charset=utf8";
         $this -> $username = $username;
         $this -> $pass = $pass;
         $options=[PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];

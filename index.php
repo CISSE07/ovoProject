@@ -11,7 +11,6 @@ define("URL", str_replace("index.php","",
     (isset($_SERVER['https'])?"https":"http")."://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"
     )
 );
-// var_dump($_SERVER);
 
 require_once 'controller/DisplayController.php';
 require_once "controller/AbstractController.php";
@@ -22,7 +21,6 @@ require_once "controller/ProjectController.php";
 require_once "controller/admin/AdminController.php";
 
 
-// $project= new ProjectController();
 $visitor= new VisitorController();
 $user= new UserController();
 $project= new ProjectController();
@@ -64,7 +62,7 @@ try{
                 if(!SecurityController::isLog()){
                     DisplayController::messageAlert("Il faut se connecter !", DisplayController::ROUGE);
                     header("Location: " . URL . "accueil");
-                    die(); // laisser ou enlever à demander au prof
+                    die(); 
                 } else{
                     switch ($url[1]){
                         case "profil":
@@ -72,7 +70,7 @@ try{
                             break;
                         case "updateValidation":
                             $user->UpdateUser();
-                            break;// a faire.
+                            break;
                         case "logout":
                             $user->logout();
                             break;
@@ -90,9 +88,7 @@ try{
                             break;
                     }
                 }
-            // case "updateUser":
-            //     $user->updateUser();
-            
+           
         }
 
     }

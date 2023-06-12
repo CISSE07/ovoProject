@@ -13,7 +13,7 @@ class UserController extends AbstractController {
 
     private $projectManager; // la classe projectManager qui gère toutes les donnée corrrespondant aux projets
     public function __construct(){
-        $this->base = new DbConnect("root",""); //instanciation d'un objet PDO
+        $this->base = new DbConnect("root","root"); //instanciation d'un objet PDO
         $this->UserManager= new UserManager($this->base); //créer un objet statement
     }
 

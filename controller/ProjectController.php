@@ -15,7 +15,7 @@ private $ProjectManager;
 
 public function __construct()
 {
-    $this->base = new DbConnect("root", ""); //instanciation d'un objet PDO
+    $this->base = new DbConnect("root", "root"); //instanciation d'un objet PDO
     $this->UserManager= new UserManager($this->base); //créer un objet statement
     $this->ProjectManager = new ProjectManager($this->base); //instantier un objet ProjectManager
 }
