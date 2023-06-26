@@ -1,3 +1,5 @@
+@import './variable';
+
 /* parametrage génerale des ul */
 ul{
     list-style-type: none;
@@ -5,7 +7,7 @@ ul{
 /* parametrage génerale des liens */
 a{
     text-decoration: none;
-    color: #0D2053;
+    color: $couleur_principale;
 }
 /*parametrage génerale des titres  */
 h1,h2{
@@ -17,7 +19,7 @@ h5{
     font-size: 15px;
     width: 300px;
     position: relative;
-    background: linear-gradient(90deg, rgba(168,37,184,1) 0%, rgba(247,134,46,1) 21%, rgba(247,134,46,1) 39%, rgba(253,94,9,1) 52%, rgba(254,255,0,1) 82%);
+    background: $couleur_graadient;
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;

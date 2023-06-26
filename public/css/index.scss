@@ -15,13 +15,15 @@
 @import'./scss/log';
 @import'./scss/portfolio';
 @import'./scss/responsive';
+@import './scss/variable';
+
 
 /* reset */
 *{
     padding: 0;
     margin: 0;
     font-family: "Inter",sans-serif;
-    color: #0D2053;
+    color: $couleur_principale;
 }
 main{
     min-height: 46rem;
@@ -30,18 +32,4 @@ main{
 /* reset image */
 section img{
     width: 300px;
-}
-// alert
-.alert{
-    padding-top: 15px;
-    text-align: -webkit-center;
-}
-.alert-danger{
-    color: #dc3545;
-}
-.alert-success{
-    color: #20c997a3;
-}
-.alert-warning{
-    color: #fd7e14;
 }

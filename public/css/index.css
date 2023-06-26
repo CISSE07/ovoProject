@@ -42,6 +42,45 @@ hr {
   padding-top: 10px;
 }
 
+#module_alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-danger {
+  color: #f4F4F4;
+  text-align: center;
+  width: 130px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  margin-top: 5px;
+  padding: 4px;
+  background-color: red;
+}
+
+.alert-success {
+  color: #f4F4F4;
+  text-align: center;
+  width: 130px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  margin-top: 5px;
+  padding: 4px;
+  background-color: rgb(17, 255, 183);
+}
+
+.alert-warning {
+  color: #f4F4F4;
+  text-align: center;
+  width: 130px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  margin-top: 5px;
+  padding: 4px;
+  background-color: rgb(253, 126, 20);
+}
+
 /* boutons */
 button {
   padding: 10px 15px;
@@ -49,14 +88,12 @@ button {
   border-radius: 5px;
   margin: 10px 0px;
 }
-
 button:hover {
   background-color: #0D2053;
   color: #F5F5F5;
   transition: 0.1s ease-in;
   cursor: pointer;
 }
-
 button:hover a {
   color: #F5F5F5;
 }
@@ -65,19 +102,16 @@ button:hover a {
 header button {
   background-color: #0D2053;
 }
-
 header button a {
   color: #F5F5F5;
   transition: 0.1s ease-in;
 }
-
+header button a:hover {
+  color: #0D2053;
+}
 header button:hover {
   background-color: #e0dede;
   cursor: pointer;
-}
-
-header button:hover a {
-  color: #0D2053;
 }
 
 /* class btnContact */
@@ -105,39 +139,29 @@ table {
   margin: 0 auto;
   padding: 0 0 2em 0;
 }
-
-table td, table th {
-  padding-bottom: 2%;
-  padding-top: 2%;
-  padding-left: 2%;
-  color: white;
-}
-
-/* Background-color of the odd rows */
 table tr:nth-child(odd) {
   background-color: #323C50;
 }
-
-/* Background-color of the even rows */
 table tr:nth-child(even) {
   background-color: #2C3446;
 }
-
-/* background th */
 table th {
   background-color: #1F2739;
   color: #f4f4f4;
 }
-
 table td {
   color: #f4f4f4;
 }
-
 table td:hover {
   cursor: pointer;
-  background-color: #a8a8a8;
-  color: #1F2739;
+  background-color: #EFEFEF;
+  color: #0D2053;
   transition: 0.1s ease-in;
+}
+
+table td, table th {
+  padding: 15px;
+  color: white;
 }
 
 #sect_delete, #sect_addProject {
@@ -146,6 +170,35 @@ table td:hover {
 
 #sect_delete button:hover {
   background-color: #df0505;
+}
+
+#module {
+  position: fixed;
+  background-color: whitesmoke;
+  width: 30%;
+  top: 50%;
+  left: 35%;
+  display: none;
+  z-index: 2;
+  box-shadow: -15px 50px 90px rgba(88, 103, 128, 0.253);
+  padding: 1rem;
+}
+#module form {
+  width: -webkit-fill-available;
+}
+#module .close_modal {
+  border: 1px solid transparent;
+  background-color: #0D2053;
+  color: white;
+  position: absolute;
+  right: 25px;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 /* 
@@ -257,8 +310,8 @@ section:first-of-type {
 
 #etape p:hover {
   cursor: pointer;
-  color: #0d2053;
-  border-bottom: 1px solid #0d2053;
+  color: #0D2053;
+  border-bottom: 1px solid #0D2053;
 }
 
 #etape p span {
@@ -267,7 +320,7 @@ section:first-of-type {
 }
 
 #etape p:hover span {
-  color: #0d2053;
+  color: #0D2053;
 }
 
 #sect_fonct img {
@@ -390,7 +443,6 @@ fieldset {
   border-color: rgba(245, 245, 245, 0.3882352941);
   width: 40rem;
 }
-
 fieldset input {
   width: 360px;
   height: 35px;
@@ -429,7 +481,7 @@ fieldset input {
 
 .project {
   width: 300px;
-  border: 10px solid #0d2053;
+  border: 10px solid #0D2053;
   margin: 0px 15px 15px 0px;
 }
 
@@ -593,7 +645,6 @@ fieldset input {
   .boxRight, .boxText {
     width: -webkit-fill-available;
     display: grid;
-    /* text-align: center; */
   }
   .boxRight p {
     width: -webkit-fill-available;
@@ -634,21 +685,4 @@ main {
 /* reset image */
 section img {
   width: 300px;
-}
-
-.alert {
-  padding-top: 15px;
-  text-align: -webkit-center;
-}
-
-.alert-danger {
-  color: #dc3545;
-}
-
-.alert-success {
-  color: rgba(32, 201, 151, 0.6392156863);
-}
-
-.alert-warning {
-  color: #fd7e14;
 }/*# sourceMappingURL=index.css.map */

@@ -1,3 +1,6 @@
+// importer
+@import './variable';
+
 /* mise en page du hr -> barre de separation */
 hr{
     margin: 30px;
@@ -30,4 +33,21 @@ hr{
 .boxRight p{
     width: 410px;
     padding-top: 10px;
+}
+#module_alert{
+    @include flex-center;
+}
+.alert-danger {
+    @include alert;
+    background-color: red;
+}
+
+.alert-success {
+    @include alert;
+    background-color: rgb(17, 255, 183);
+}
+
+.alert-warning {
+    @include alert;
+    background-color: rgb(253, 126, 20);
 }

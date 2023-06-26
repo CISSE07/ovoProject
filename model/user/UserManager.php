@@ -26,32 +26,20 @@ class UserManager extends Manager{
     }
     // fonctionnalité de récuperationles infos d'apres le mail du user 
     public function getInfosUser($mail){
-        // var_dump($mail);
         $sql="SELECT * FROM user WHERE mail=?";
         $res=$this->getDb()->prepare($sql);
         $res->execute([$mail]);
         $data=$res->fetch();
-        // var_dump($data);
-        // var_dump($_SESSION);
-        // // echo('<br>');
+        
         return $data;
     }
-    // public function getUserId($mail){
-    //     $sql = "SELECT id FROM user WHERE id=?";
-    //     $res = $this->getDb()->prepare($sql);
-    //     $res->execute([$mail]);
-    //     $data = $res->fetch();
-    //     var_dump($data);
-
-    //     return $data;
-    // }
+    
 
     public function addUser($data){
         $mdp = password_hash($data['pass'], PASSWORD_DEFAULT);
         $sql="INSERT INTO user (nom,prenom,mail,pass,is_valid) VALUES (?,?,?,?,?)";
         $res=$this->getDb()->prepare($sql);
         $res->execute([$data['nom'],$data['prenom'],$data['mail'],$mdp,1]);
-        // var_dump($data['email']);
         $res=$res->rowCount();
         // si le resultat est vrai alors on ajoute sinon sa nous retourne faux
         return (($res===1) ? true : false);
@@ -60,9 +48,7 @@ class UserManager extends Manager{
     public function updateUser($data){
         $sql='UPDATE user SET nom = ?, prenom = ? WHERE mail = ?';
         $res=$this->getDb()->prepare($sql);
-        // var_dump($data);
         $res->execute([$data['nom'],$data['prenom'],$data['mail']]);
-        // var_dump($_SESSION['user']);
         $res=$res->rowCount();
         // si le resultat est vrai alors on ajoute sinon sa nous retourne faux
         return (($res===1) ? true : false);

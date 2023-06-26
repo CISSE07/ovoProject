@@ -59,9 +59,11 @@
         <?php
         if (isset($_SESSION['alert'])) :
             ?>
-            <div class="alert alert-<?= $_SESSION['alert']['type'] ?>">
-                <?= $_SESSION['alert']['msg'] ?>
-            </div>
+            <div id="module_alert">
+                    <div class="alert-<?= $_SESSION['alert']['type'] ?>">
+                        <?= $_SESSION['alert']['msg'] ?>
+                    </div>
+                </div>
         <?php
         endif;
         unset($_SESSION['alert']);
@@ -88,5 +90,5 @@
         </div>
     </footer>
 </body>
-<script src="./script.js"></script>
+<script src="../script.js"></script>
 </html>

@@ -1,4 +1,4 @@
-
+@import './variable';
 /* 
     le code css de la page expertise
 */
@@ -64,15 +64,15 @@ section:first-of-type{
 }
 #etape p:hover{
     cursor: pointer;
-    color: #0d2053;
-    border-bottom: 1px solid #0d2053;
+    color: $couleur_principale;
+    border-bottom: 1px solid $couleur_principale;
 }
 #etape p span{
     font-size: 55px;
     color: #0d20538a;
 }
 #etape p:hover span{
-    color: #0d2053;
+    color: $couleur_principale;
 }
 
 #sect_fonct img{

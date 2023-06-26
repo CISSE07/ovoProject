@@ -11,3 +11,13 @@ document.getElementById("check").addEventListener("click", function(evt){
         evt.currentTarget.dataset.valeur="change";     
     }
 });
+
+document.getElementById('confirm').addEventListener('click', ()=>{
+    document.getElementById('module').setAttribute("style","display:flex");
+    // console.log('j rentre')
+    
+})
+document.getElementsByClassName('close_modal')[0].addEventListener('click',()=>{
+    document.getElementById('module').setAttribute("style","display:none");
+    // console.log('j rentre')
+})

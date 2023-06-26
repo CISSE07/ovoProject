@@ -1,34 +1,39 @@
+@import './variable';
+
 /* boutons */
 button{
     padding: 10px 15px;
     border: transparent;
     border-radius: 5px;
     margin: 10px 0px;
-}
-button:hover{
-    background-color: #0D2053;
-    color: #F5F5F5;
-    transition: 0.1s ease-in;
-    cursor: pointer;
-}
-button:hover a{
-    color: #F5F5F5;
+    &:hover{
+        background-color: $couleur_principale;
+        color: #F5F5F5;
+        transition: 0.1s ease-in;
+        cursor: pointer;
+        & a{
+            color: #F5F5F5;
+        }
+    }
 }
 
 /* boutons header */
-header button{
-    background-color: #0D2053;
-}
-header button a{
-    color: #F5F5F5;
-    transition: 0.1s ease-in;
-}
-header button:hover{
-    background-color: #e0dede;
-    cursor: pointer;
-}
-header button:hover a{
-    color: #0D2053;
+header {
+    & button{
+        background-color: $couleur_principale;
+        & a{
+            color: #F5F5F5;
+            transition: 0.1s ease-in;
+            &:hover{
+                color: $couleur_principale;
+            }
+        }
+        &:hover{
+            background-color: #e0dede;
+            cursor: pointer;
+
+        }
+    }
 }
 /* class btnContact */
 .btnContact{

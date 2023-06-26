@@ -7,17 +7,21 @@ require_once "model/project/ProjectManager.php";
 
 class ProjectController extends AbstractController{
 
-private $base; //correspond à votre objet PDO
+private $base; 
 
 private $UserManager; //correspond à la classe userManager
 
 private $ProjectManager;
+
+private $project;
 
 public function __construct()
 {
     $this->base = new DbConnect("root", ""); //instanciation d'un objet PDO
     $this->UserManager= new UserManager($this->base); //créer un objet statement
     $this->ProjectManager = new ProjectManager($this->base); //instantier un objet ProjectManager
+    $this->project= new Project(); // instancier un objet projets
+
 }
 
 public function addProject(){
@@ -34,13 +38,12 @@ public function addProjectValidation(){
     $mail=$_SESSION['user']['mail'];
     $info = $this->UserManager->getInfosUser($mail);
 
-    $project = new Project(); // instancier un objet projets
-    $project->setNom(($data['nom_project']));
-    $project->setDescription(($data['description']));
-    $project->setIdUser($info['id']);
+    $this->project->setNom(($data['nom_project']));
+    $this->project->setDescription(($data['description']));
+    $this->project->setIdUser($info['id']);
 
         
-    $validation = $this->ProjectManager->AddProject($project);
+    $validation = $this->ProjectManager->AddProject($this->project);
     if ($validation) {
         DisplayController::messageAlert("Le projet a été pris en compte", DisplayController::VERTE);
         header("Location: ".URL."account/addProject");

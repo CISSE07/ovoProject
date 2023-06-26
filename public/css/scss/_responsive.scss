@@ -1,87 +1,8 @@
-
-
+// importer
+@import './variable';
 @media screen and (max-width:600px) {
     /* animation et construction du menu hamberger */
-    .con{
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    #check{
-        position: absolute;
-        opacity: 0;
-    }
-    
-    label{
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        position: relative;
-        display: block;
-    }
-    
-    label span{
-        position: absolute;
-        display: block;
-        height: 3px;
-        width: 100%;
-        border-radius: 100px;
-        background-color: #0D2053;
-        transition: 0.5s ease-in-out;
-    }
-    
-    label span:nth-child(1){
-        top: 0;
-    }
-    
-    label span:nth-child(2){
-        top: 8px;
-    }
-    
-    label span:nth-child(3){
-        top: 16px;
-    }
-    
-    label span:nth-child(4){
-        transform: rotate(-45deg);
-        top: 8px;
-        opacity: 0;
-    }
-    
-    #check:checked + label span:nth-child(3){
-        opacity: 0; 
-    }
-    
-    #check:checked + label span:nth-child(2){
-        opacity: 0; 
-    }
-    
-    #check:checked + label span:nth-child(1){
-        animation: a 1.2s ease forwards;
-    }
-    
-    /* animation menu hamburger*/
-    @keyframes a {
-        50%{
-            transform: translatey(13px);
-        }
-        100%{
-            transform: rotate(45deg);
-            top:8px;
-        }
-    }
-    
-    #check:checked + label span:nth-child(4){
-        animation: b 1.5s cubic-bezier(0.9, 0, 0.85, -0.1) forwards;
-    }
-    
-    @keyframes b {
-        100%{
-            opacity: 100;
-        }
-    } 
+    @include menu_hamb;
 
     /* header responsive */
     header{
@@ -146,7 +67,6 @@
     .boxRight, .boxText {
         width: -webkit-fill-available;
         display: grid;
-        /* text-align: center; */
     }
     .boxRight p{
         width: -webkit-fill-available;

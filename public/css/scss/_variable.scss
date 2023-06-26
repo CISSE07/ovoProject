@@ -1,0 +1,101 @@
+// variables couleurs 
+$couleur_principale: #0D2053;
+$couleur_gris:#f4f4f4;
+$couleur_graadient: linear-gradient(90deg, rgba(168,37,184,1) 0%, rgba(247,134,46,1) 21%, rgba(247,134,46,1) 39%, rgba(253,94,9,1) 52%, rgba(254,255,0,1) 82%);
+
+
+// mixin
+@mixin alert{
+    color: #f4F4F4;
+    text-align: center;
+    width: 130px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    margin-top: 5px;
+    padding: 4px;
+}
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin menu_hamb{
+    .con{
+        height: 100%;
+        @include flex-center();
+    }
+    
+    #check{
+        position: absolute;
+        opacity: 0;
+    }
+    
+    label{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        position: relative;
+        display: block;
+    }
+    
+    label span{
+        position: absolute;
+        display: block;
+        height: 3px;
+        width: 100%;
+        border-radius: 100px;
+        background-color: $couleur_principale;
+        transition: 0.5s ease-in-out;
+    }
+    
+    label span:nth-child(1){
+        top: 0;
+    }
+    
+    label span:nth-child(2){
+        top: 8px;
+    }
+    
+    label span:nth-child(3){
+        top: 16px;
+    }
+    
+    label span:nth-child(4){
+        transform: rotate(-45deg);
+        top: 8px;
+        opacity: 0;
+    }
+    
+    #check:checked + label span:nth-child(3){
+        opacity: 0; 
+    }
+    
+    #check:checked + label span:nth-child(2){
+        opacity: 0; 
+    }
+    
+    #check:checked + label span:nth-child(1){
+        animation: a 1.2s ease forwards;
+    }
+    
+    /* animation menu hamburger*/
+    @keyframes a {
+        50%{
+            transform: translatey(13px);
+        }
+        100%{
+            transform: rotate(45deg);
+            top:8px;
+        }
+    }
+    
+    #check:checked + label span:nth-child(4){
+        animation: b 1.5s cubic-bezier(0.9, 0, 0.85, -0.1) forwards;
+    }
+    
+    @keyframes b {
+        100%{
+            opacity: 100;
+        }
+    } 
+}

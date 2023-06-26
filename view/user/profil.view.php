@@ -5,7 +5,7 @@
     <section id="baniereBvn">
         <h1>Bienvenue <?=$data['prenom']?></h1>
     </section>
-   
+
     <!-- section profil -->
     <section id="profil">
         <h2>Mon Profil</h2>
@@ -100,9 +100,19 @@
     
     <hr>
     <section id="sect_delete">
-        <button>
-            <a href="<?= URL ?>account/delete">Supprimer mon compte</a>
-        </button>
+        <button id="confirm"> Supprimer mon compte </button>
+        <div id="module">
+            <form action="<?= URL ?>account/delete" method="post">
+                <fieldset>
+                    <legend>Suppression</legend>
+                    <br>
+                    <i class="fa-solid fa-x close_modal"></i>
+                    <br>
+                    <p>Etes vous sûr(e) de vouloir supprimer votre compte</p>
+                    <button type="submit">Oui</button>
+                </fieldset> 
+            </form>
+        </div>
     </section>     
 <?php
 $content=ob_get_clean();

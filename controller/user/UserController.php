@@ -36,7 +36,6 @@ class UserController extends AbstractController {
                 DisplayController::messageAlert("Tu es connecté", DisplayController::VERTE);
                 $_SESSION['user']=[
                     'mail' => $user['mail'],
-                    'id'=>$user['id']
                 ];
                 header("Location: ".URL."account/profil");
                 die();
@@ -68,6 +67,7 @@ class UserController extends AbstractController {
                 $_SESSION['user']=[
                     'mail' => $data['mail'],
                 ];
+                // var_dump($_POST);
                 header("Location: ".URL."account/profil");
                 die();
             }else{
